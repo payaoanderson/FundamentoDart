@@ -4,6 +4,8 @@ void main() {
   // variaves non-nullable
   String nomeCompletoSemAtribuicao;
   nomeCompletoSemAtribuicao = "fundamentos do dart";
+
+  print(nomeCompletoSemAtribuicao);
   String nomeCompletoComAtributo = null;
   nomeCompletoComAtributo = "fundamentos do dart";
 
