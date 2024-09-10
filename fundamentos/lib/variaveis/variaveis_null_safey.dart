@@ -6,8 +6,8 @@ void main() {
   nomeCompletoSemAtribuicao = "fundamentos do dart";
 
   print(nomeCompletoSemAtribuicao);
-  String nomeCompletoComAtributo = null;
-  nomeCompletoComAtributo = "fundamentos do dart";
+//  String nomeCompletoComAtributo = null;
+String  nomeCompletoComAtributo = "fundamentos do dart";
 
   String? nomeCompletoComAtribuicaoNullAble = null;
 }
