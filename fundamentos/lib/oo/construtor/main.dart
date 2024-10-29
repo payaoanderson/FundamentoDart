@@ -3,6 +3,7 @@ import 'com_parametros.dart' as com_parametros;
 import 'inicializacao_formal.dart' as inic_formal;
 import 'opicional_posicional.dart' as op_posicional;
 import 'opcinal.nomeado.dart' as opcinal_nomeado;
+import 'obrigatorio_nomeado.dart' as ob_nomeado;
 
 void main(List<String> args) {
   final carroGTR = padrao.Carro();
@@ -44,4 +45,13 @@ void main(List<String> args) {
                                                             // temABS: false
                                                              );
   carroGTR6.imprimirDados();
+
+
+  final carroGTR7 = ob_nomeado.Carro(fabricante:"nissan 7", 
+                                    modelo:"GTR",  
+                                    anoFabricacao: 2013, 
+                                    anoModelo: 2012, 
+                                    temABS: false
+                                    );
+  carroGTR7.imprimirDados();
 }
