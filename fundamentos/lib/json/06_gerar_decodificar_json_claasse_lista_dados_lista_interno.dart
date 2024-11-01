@@ -66,14 +66,18 @@ void main() {
 //    "telefones": ["1234-5678","9876-5432"],
 //   "emails": ["alice@gmail.com", "alice@hotmail.com"]
 //  },
-// {"nome":"alice", 
-// "idade":30, 
-// "eEstudante":false, 
-// "telefones": ["1123-4444", "1472-1111",], 
-// "emails": ["alice@gmail.com", "alice@hotmail.com"]
-// },
-// {"nome":"bob", "idade":25, "eEstudante":true, "telefones": ["1123-4444", "1472-1111",], "emails": ["bob@gmail.com", "bob@hotmail.com"]},
-// {"nome":"carol", "idade":29, "eEstudante":false, "telefones": ["1123-4444", "1472-1111",], "emails": ["carol@gmail.com", "carol@hotmail.com"]}
+
+// {"nome":"bob", 
+//"idade":25, 
+//"eEstudante":true, 
+//"telefones": ["1123-4444", "1472-1111",], 
+//"emails": ["bob@gmail.com", "bob@hotmail.com"]
+//},
+// {"nome":"carol", 
+//"idade":29, 
+//"eEstudante":false, 
+//"telefones": ["1123-4444", "1472-1111",], 
+//"emails": ["carol@gmail.com", "carol@hotmail.com"]}
 //     ]''';
 
   List<dynamic> usuariosJson = jsonDecode(jsonString);
