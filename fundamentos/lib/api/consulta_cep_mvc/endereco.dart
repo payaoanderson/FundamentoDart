@@ -1,6 +1,4 @@
-import 'dart:convert';
 
-import 'package:http/http.dart' as http;
 
 class Endereco {
   String cep;
@@ -67,20 +65,5 @@ class Endereco {
         gia: json['gia'],
         ddd: json['ddd'],
         siafi: json['siafi']);
-  }
-}
-
-Future<void> main(List<String> args) async {
-  final url = Uri.parse('https://viacep.com.br/ws/17515440/json/');
-
-  final resposta = await http.get(url);
-
-  if (resposta.statusCode == 200) {
-    Map<String, dynamic> cep = jsonDecode(resposta.body);
-    Endereco endereco = Endereco.deJson(cep);
-    print("Logradouro: ${endereco.logradouro}");
-    print("Bairro: ${endereco.bairro}");
-    print("Cidade: ${endereco.localidade}");
-    print("UF: ${endereco.uf}");
   }
 }
