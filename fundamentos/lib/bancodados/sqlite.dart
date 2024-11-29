@@ -1,5 +1,6 @@
-import 'package:sqlite3/sqlite3.dart';
+import 'dart:ffi';
 
+import 'package:sqlite3/sqlite3.dart';
 
 class Usuario {
   final int? id;
@@ -18,7 +19,7 @@ class Usuario {
 }
 
 class DatabaseHelper {
-  static late sqlite3.Database db;
+  static late Database db;
 
   // Conectar ao banco de dados SQLite no arquivo específico
   static void conectar() {
@@ -28,6 +29,8 @@ class DatabaseHelper {
     db.execute(
       'CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, idade INTEGER)',
     );
+
+    db.execute('delete from usuarios');
   }
 
   // Inserir um novo usuário
@@ -35,6 +38,8 @@ class DatabaseHelper {
     db.execute(
       'INSERT INTO usuarios (nome, idade) VALUES (?, ?)',
       [usuario.nome, usuario.idade],
+      // nunca usar o sql ingection
+      //"INSERT INTO usuarios (nome, idade) VALUES ('${usuario.nome}', ${usuario.idade})",
     );
   }
 
@@ -105,6 +110,9 @@ void main() {
   DatabaseHelper.excluirUsuario(2);
 
   // Obter usuários restantes
+  var usuarioMalicious = Usuario(nome: "carlos', 30);drop table usuarios; --", idade: 30);
+
+  DatabaseHelper.inserirUsuario(usuarioMalicious);
   var usuariosRestantes = DatabaseHelper.obterUsuarios();
   for (var usuario in usuariosRestantes) {
     print('Usuario Restante: ${usuario.nome}, Idade: ${usuario.idade}');
